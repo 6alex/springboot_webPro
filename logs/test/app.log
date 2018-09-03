@@ -1,0 +1,78 @@
+2018-05-22 14:43:23.683  INFO 8288 --- [main] com.wen.Application                      : Starting Application on DELL-PC with PID 8288 (F:\myselfWorkspace\springboot-web\target\classes started by DELL in F:\myselfWorkspace\springboot-web)
+2018-05-22 14:43:23.689 DEBUG 8288 --- [main] com.wen.Application                      : Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+2018-05-22 14:43:23.689  INFO 8288 --- [main] com.wen.Application                      : The following profiles are active: dev
+2018-05-22 14:43:23.744  INFO 8288 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@57c03d88: startup date [Tue May 22 14:43:23 CST 2018]; root of context hierarchy
+2018-05-22 14:43:25.431  INFO 8288 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-05-22 14:43:25.449  INFO 8288 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-05-22 14:43:25.450  INFO 8288 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-05-22 14:43:25.764  WARN 8288 --- [localhost-startStop-1] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/G:/58nf/.m2/repository/com/github/jsqlparser/jsqlparser/1.1/jsqlparser-1.1.jar] from classloader hierarchy
+
+java.util.zip.ZipException: invalid LOC header (bad signature)
+	at java.util.zip.ZipFile.read(Native Method) ~[na:1.8.0_91]
+	at java.util.zip.ZipFile.access$1400(ZipFile.java:60) ~[na:1.8.0_91]
+	at java.util.zip.ZipFile$ZipFileInputStream.read(ZipFile.java:717) ~[na:1.8.0_91]
+	at java.util.zip.ZipFile$ZipFileInflaterInputStream.fill(ZipFile.java:419) ~[na:1.8.0_91]
+	at java.util.zip.InflaterInputStream.read(InflaterInputStream.java:158) ~[na:1.8.0_91]
+	at sun.misc.IOUtils.readFully(IOUtils.java:65) ~[na:1.8.0_91]
+	at java.util.jar.JarFile.getBytes(JarFile.java:425) ~[na:1.8.0_91]
+	at java.util.jar.JarFile.getManifestFromReference(JarFile.java:193) ~[na:1.8.0_91]
+	at java.util.jar.JarFile.getManifest(JarFile.java:180) ~[na:1.8.0_91]
+	at org.apache.tomcat.util.scan.JarFileUrlJar.getManifest(JarFileUrlJar.java:204) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.scan.StandardJarScanner.processManifest(StandardJarScanner.java:423) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.scan.StandardJarScanner.process(StandardJarScanner.java:376) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.scan.StandardJarScanner.processURLs(StandardJarScanner.java:309) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.scan.StandardJarScanner.doScanClassPath(StandardJarScanner.java:266) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.scan.StandardJarScanner.scan(StandardJarScanner.java:229) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.jasper.servlet.TldScanner.scanJars(TldScanner.java:262) [tomcat-embed-jasper-8.5.27.jar:8.5.27]
+	at org.apache.jasper.servlet.TldScanner.scan(TldScanner.java:104) [tomcat-embed-jasper-8.5.27.jar:8.5.27]
+	at org.apache.jasper.servlet.JasperInitializer.onStartup(JasperInitializer.java:101) [tomcat-embed-jasper-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5196) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1419) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1409) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_91]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_91]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_91]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_91]
+
+2018-05-22 14:43:25.767  WARN 8288 --- [localhost-startStop-1] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/F:/eclipse_oxygen/eclipse/plugins/univocity-parsers-2.5.4.jar] from classloader hierarchy
+
+java.io.FileNotFoundException: F:\eclipse_oxygen\eclipse\plugins\univocity-parsers-2.5.4.jar (系统找不到指定的文件。)
+	at java.util.zip.ZipFile.open(Native Method) ~[na:1.8.0_91]
+	at java.util.zip.ZipFile.<init>(ZipFile.java:219) ~[na:1.8.0_91]
+	at java.util.zip.ZipFile.<init>(ZipFile.java:149) ~[na:1.8.0_91]
+	at java.util.jar.JarFile.<init>(JarFile.java:166) ~[na:1.8.0_91]
+	at java.util.jar.JarFile.<init>(JarFile.java:130) ~[na:1.8.0_91]
+	at org.apache.tomcat.util.compat.JreCompat.jarFileNewInstance(JreCompat.java:188) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.scan.JarFileUrlJar.<init>(JarFileUrlJar.java:65) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.scan.JarFactory.newInstance(JarFactory.java:49) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.scan.StandardJarScanner.process(StandardJarScanner.java:374) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.scan.StandardJarScanner.processURLs(StandardJarScanner.java:309) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.scan.StandardJarScanner.doScanClassPath(StandardJarScanner.java:266) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.scan.StandardJarScanner.scan(StandardJarScanner.java:229) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.jasper.servlet.TldScanner.scanJars(TldScanner.java:262) [tomcat-embed-jasper-8.5.27.jar:8.5.27]
+	at org.apache.jasper.servlet.TldScanner.scan(TldScanner.java:104) [tomcat-embed-jasper-8.5.27.jar:8.5.27]
+	at org.apache.jasper.servlet.JasperInitializer.onStartup(JasperInitializer.java:101) [tomcat-embed-jasper-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5196) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1419) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1409) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_91]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_91]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_91]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_91]
+
+2018-05-22 14:43:25.804  INFO 8288 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-05-22 14:43:25.808  INFO 8288 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-05-22 14:43:25.808  INFO 8288 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2066 ms
+2018-05-22 14:43:25.988  INFO 8288 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-05-22 14:43:25.993  INFO 8288 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-22 14:43:25.994  INFO 8288 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-22 14:43:25.994  INFO 8288 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-22 14:43:25.994  INFO 8288 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-22 14:43:26.927  INFO 8288 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2018-05-22 14:43:27.981  INFO 8288 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-05-22 14:43:27.983  INFO 8288 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'singleDatasource' has been autodetected for JMX exposure
+2018-05-22 14:43:27.988  INFO 8288 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'singleDatasource': registering with JMX server as MBean [com.alibaba.druid.pool:name=singleDatasource,type=DruidDataSource]
+2018-05-22 14:43:28.076  INFO 8288 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2018-05-22 14:43:28.081  INFO 8288 --- [main] com.wen.Application                      : Started Application in 4.836 seconds (JVM running for 5.391)
