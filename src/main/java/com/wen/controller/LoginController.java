@@ -39,6 +39,7 @@ public class LoginController {
 		List<CrmMember> list = crmMemberService.queryCrmMemberByPageCond(crmMember);
 		if(CollectionUtils.isEmpty(list)) {
             return "cover/loginlight";
+            //return "cover/loginflower";
 		}
 		Wrapper<News> arg0=new EntityWrapper<News>(new News());
 		List<News> newsList = newsService.selectList(arg0);

@@ -6,7 +6,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>html5跟随鼠标炫酷网站引导页动画 </title>
-    <link href="<c:url value="../styles/hovertreewelcome.css"/>" type="text/css" rel="stylesheet" />
+    <link href="<c:url value="/styles/hovertreewelcome.css"/>" type="text/css" rel="stylesheet" />
 </head>
 <body> <!-- ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" onselectstart="event.returnValue=false" -->
     
@@ -25,7 +25,7 @@
         <source src="http://hovertree.com" type="audio/ogg">
         <source src="http://down.hovertree.com/hovertreesound/hovertreexihuanni.mp3" type="audio/mpeg">       
     </audio> -->
-    <script type="text/javascript" src="<c:url value="../scripts/hovertreewelcome.js"/>">
+    <script type="text/javascript" src="<c:url value="/scripts/hovertreewelcome.js"/>">
     </script>
     <script type="text/javascript">
 
