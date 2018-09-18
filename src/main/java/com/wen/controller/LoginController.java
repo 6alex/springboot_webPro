@@ -15,6 +15,7 @@ import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.wen.dao.entity.CrmMember;
 import com.wen.dao.entity.News;
+import com.wen.dao.entity.User;
 import com.wen.dao.query.CrmMemberQuery;
 import com.wen.service.CrmMemberService;
 import com.wen.service.NewsService;
@@ -36,8 +37,8 @@ public class LoginController {
 		CrmMemberQuery crmMember = new CrmMemberQuery();
 		 BeanUtils.copyProperties(user, crmMember);//s1复制给s2
 		 crmMember.setPageRows(1);
-		List<CrmMember> list = crmMemberService.queryCrmMemberByPageCond(crmMember);
-		if(CollectionUtils.isEmpty(list)) {
+		 List<CrmMember> list = crmMemberService.queryCrmMemberByPageCond(crmMember);
+		 if(CollectionUtils.isEmpty(list)) {
             return "cover/loginlight";
             //return "cover/loginflower";
 		}
@@ -46,5 +47,4 @@ public class LoginController {
 		modelMap.put("news", newsList);
 		return "news/news_list";
 	}
-
 }

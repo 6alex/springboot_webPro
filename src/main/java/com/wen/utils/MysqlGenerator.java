@@ -24,7 +24,7 @@ public class MysqlGenerator {
     //user -> UserService, 设置成true: user -> IUserService 
     boolean serviceNameStartWithI = false; 
     //指定生成的表名 
-    String[] tableNames = new String[]{"news"}; 
+    String[] tableNames = new String[]{"t_role","t_module","t_module_role"};
     generateByTables(serviceNameStartWithI, packageName, tableNames); 
   } 
   /** 

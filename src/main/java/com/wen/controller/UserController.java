@@ -3,7 +3,10 @@ package com.wen.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.wen.dao.entity.User;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 
 /**
  * <p>
@@ -16,6 +19,13 @@ import org.springframework.stereotype.Controller;
 @Controller
 @RequestMapping("/user")
 public class UserController {
-
+	
+	
+	@RequestMapping("/login.html")
+	public  String  userLogin(ModelMap modelMap,User user) {
+		
+		return null;
+		
+	}
 }
 
