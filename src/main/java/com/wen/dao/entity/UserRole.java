@@ -7,14 +7,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 权限-角色中间表
+ * 用户角色中间表
  * </p>
  *
  * @author Alex.wen123
  * @since 2018-10-16
  */
-@TableName("t_module_role")
-public class ModuleRole implements Serializable {
+@TableName("t_user_role")
+public class UserRole implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -23,14 +23,8 @@ public class ModuleRole implements Serializable {
      */
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
-    /**
-     * 角色id
-     */
+    private Integer uid;
     private Integer rid;
-    /**
-     * 权限id
-     */
-    private Integer mid;
 
 
     public Integer getId() {
@@ -41,6 +35,14 @@ public class ModuleRole implements Serializable {
         this.id = id;
     }
 
+    public Integer getUid() {
+        return uid;
+    }
+
+    public void setUid(Integer uid) {
+        this.uid = uid;
+    }
+
     public Integer getRid() {
         return rid;
     }
@@ -49,20 +51,12 @@ public class ModuleRole implements Serializable {
         this.rid = rid;
     }
 
-    public Integer getMid() {
-        return mid;
-    }
-
-    public void setMid(Integer mid) {
-        this.mid = mid;
-    }
-
     @Override
     public String toString() {
-        return "ModuleRole{" +
+        return "UserRole{" +
         "id=" + id +
+        ", uid=" + uid +
         ", rid=" + rid +
-        ", mid=" + mid +
         "}";
     }
 }

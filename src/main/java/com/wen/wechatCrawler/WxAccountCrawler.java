@@ -187,7 +187,7 @@ public class WxAccountCrawler extends BreadthCrawler {
     public static void main(String[] args) throws Exception {
         WxAccountCrawler crawler = new WxAccountCrawler("crawl_weixin", "wx_history.txt");
         crawler.addAccount("新华网");
-        //crawler.addAccount("IT时报");
+        crawler.addAccount("IT时报");
 
         crawler.setThreads(5);
         crawler.start(20);

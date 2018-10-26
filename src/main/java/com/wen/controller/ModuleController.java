@@ -7,11 +7,11 @@ import org.springframework.stereotype.Controller;
 
 /**
  * <p>
- * 用户权限表 前端控制器
+ * 权限表 前端控制器
  * </p>
  *
  * @author Alex.wen123
- * @since 2018-09-18
+ * @since 2018-10-16
  */
 @Controller
 @RequestMapping("/module")

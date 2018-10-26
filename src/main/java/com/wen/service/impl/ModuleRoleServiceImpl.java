@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author Alex.wen123
- * @since 2018-09-18
+ * @since 2018-10-16
  */
 @Service
 public class ModuleRoleServiceImpl extends ServiceImpl<ModuleRoleMapper, ModuleRole> implements ModuleRoleService {

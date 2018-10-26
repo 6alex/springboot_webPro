@@ -1,16 +1,16 @@
 package com.wen.dao.repository;
 
-import com.wen.dao.entity.Module;
+import com.wen.dao.entity.UserRole;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 
 /**
  * <p>
- * 权限表 Mapper 接口
+ * 用户角色中间表 Mapper 接口
  * </p>
  *
  * @author Alex.wen123
  * @since 2018-10-16
  */
-public interface ModuleMapper extends BaseMapper<Module> {
+public interface UserRoleMapper extends BaseMapper<UserRole> {
 
 }

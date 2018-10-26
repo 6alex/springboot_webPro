@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 
 /**
  * <p>
- * 用户权限表 服务实现类
+ * 权限表 服务实现类
  * </p>
  *
  * @author Alex.wen123
- * @since 2018-09-18
+ * @since 2018-10-16
  */
 @Service
 public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> implements ModuleService {

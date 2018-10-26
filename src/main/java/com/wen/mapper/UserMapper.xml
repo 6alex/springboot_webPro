@@ -6,22 +6,31 @@
     <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.wen.dao.entity.User">
-        <id column="id" property="id" />
+    <resultMap id="userMap" type="com.wen.dao.entity.User">
+        <id column="uid" property="uid" />
         <result column="username" property="username" />
-        <result column="name" property="name" />
         <result column="password" property="password" />
-        <result column="salt" property="salt" />
-        <result column="phone" property="phone" />
-        <result column="tips" property="tips" />
-        <result column="state" property="state" />
-        <result column="created_time" property="createdTime" />
-        <result column="updated_time" property="updatedTime" />
+         <collection property="roles" ofType="com.wen.dao.entity.Role">
+            <id property="rid" column="rid"/>
+            <result property="rname" column="rname"/>
+            <collection property="modules" ofType="com.wen.dao.entity.Module">
+                <id property="mid" column="mid"/>
+                <result property="mname" column="mname"/>
+            </collection>
+        </collection>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, username, name, password, salt, phone, tips, state, created_time, updated_time
+        uid, username, password
     </sql>
+    
+     <select id="findByUserName" parameterType="string" resultMap="userMap">
+        SELECT u.*,r.*,m.* FROM t_user u inner join t_user_role ur on ur.uid=u.uid 
+        inner join t_role r on r.rid=ur.rid
+        inner join t_module_role mr on mr.rid=r.rid 
+        inner join t_module m on mr.mid=m.mid 
+        WHERE username=#{username};
+    </select>
 
 </mapper>

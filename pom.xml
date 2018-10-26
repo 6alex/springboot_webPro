@@ -60,7 +60,25 @@
 			<artifactId>commons-dbcp2</artifactId>
 			<version>2.1.1</version><!--$NO-MVN-MAN-VER$ -->
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.7</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<version>4.1</version>
+		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.alibaba/dubbo -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>2.6.2</version>
+		</dependency>
 
 		<!-- druid阿里巴巴数据库连接池 -->
 		<dependency>
@@ -145,6 +163,12 @@
 			<artifactId>shiro-spring</artifactId>
 			<version>1.2.2</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-web -->
+		<dependency>
+		    <groupId>org.apache.shiro</groupId>
+		    <artifactId>shiro-web</artifactId>
+		    <version>1.4.0</version>
+		</dependency>
 		<!-- shiro ehcache -->
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
@@ -156,6 +180,12 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.15</version>
 		</dependency>
 
 	</dependencies>
