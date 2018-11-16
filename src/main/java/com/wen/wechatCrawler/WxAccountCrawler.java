@@ -131,7 +131,7 @@ public class WxAccountCrawler extends BreadthCrawler {
         try {
             jdbcTemplate = JDBCHelper.createMysqlTemplate("mysql1",
                     "jdbc:mysql://localhost:3306/pos?serverTimezone=UTC&useSSL=false&autoReconnect=true&tinyInt1isBit=false&useUnicode=true&characterEncoding=utf8",
-                    "root", "123", 5);
+                    "root", "123456", 5);
 //如果数据库中没有相关的表这里需要添加建表操作
         } catch (Exception ex) {
             jdbcTemplate = null;

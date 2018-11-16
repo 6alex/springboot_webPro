@@ -150,7 +150,7 @@ public class MysqlGenerator {
     })
         .setUrl(dbUrl) 
         .setUsername("root") 
-        .setPassword("123") 
+        .setPassword("123456") 
         .setDriverName("com.mysql.cj.jdbc.Driver"); 
   } 
   /** 

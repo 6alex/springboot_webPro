@@ -5,7 +5,6 @@
 	<artifactId>springboot_webPro</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -33,7 +32,7 @@
 		<dependency>
 			<groupId>Mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.7-dmr</version>
+			<version>5.1.39</version>
 		</dependency>
 		<dependency>
 			<groupId>cn.edu.hfut.dmic.webcollector</groupId>
