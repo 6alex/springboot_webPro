@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
@@ -108,8 +109,10 @@ public class TestJava8 {
         Staff s1 = new Staff("zz", 10, new BigDecimal(2000), new Date());
         Staff2 s2 = new Staff2();
         s2.setSex(1);
+        s2.setName("xx");
+        s2.setAge(18);
 
-        BeanUtils.copyProperties(s1, s2);// s1复制给s2
+        BeanUtils.copyProperties(s2, s1);
         System.out.println(s2);
         System.out.println(s1);
 
@@ -297,12 +300,19 @@ public class TestJava8 {
 
     @Test
     public void test1() {
+        /*String zString = "111";
+        System.err.println("zz" + zString.split(",")[0]);
         String q = "1,,";
         String[] split = q.split(",");
         System.err.println(split.length);
         System.err.println("不要逗号截取--"+split[0]);
+        q.hashCode();
+        System.err.println("".equals(null));*/
+        String a = "1,2,3";
+        String b = "1,2,3,";
+        System.err.println("a" + a.split(",").length);
 
-        System.err.println("".equals(null));
+        System.err.println("b" + b.split(",")[2]);
     }
 
     @Test
@@ -394,6 +404,31 @@ public class TestJava8 {
         String substring = str1.substring(1, 2);
         System.err.println("substring-----"+substring);
         String str2=str+"cuo";
+    }
+
+    @Test
+    public void str() throws Exception {
+        String str = "hello world";
+        String[] split = str.split("");
+        StringBuffer buffer = new StringBuffer("");
+        System.out.println(split.length);
+        for (int i = split.length - 1; i >= 0; i--) {
+            System.out.println(i);
+            buffer.append(split[i]);
+        }
+        System.out.println("倒序" + buffer.toString());
+    }
+
+    @Test
+    public void getDateWeekInt() throws Exception {
+        Calendar c = Calendar.getInstance();
+        c.setTime(new Date());
+        System.err.println(c.get(Calendar.DAY_OF_WEEK));
+    }
+
+    @Test
+    public void sy() throws Exception {
+        //synchronized 
     }
 
 }
