@@ -19,6 +19,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
 
@@ -27,6 +28,7 @@ import com.alibaba.fastjson.JSONObject;
 
 public class TestJava8 {
 
+    private static final Object JSONObject = null;
     List<Staff> publicList = Arrays.asList(new Staff("小明", 18, new BigDecimal(2000)),
             new Staff("小明1", 33, new BigDecimal(22020)), new Staff("小明2", 44, new BigDecimal(2800)),
             new Staff("小明3", 23, new BigDecimal(2700)), new Staff("小明4", 21, null),
@@ -429,6 +431,81 @@ public class TestJava8 {
     @Test
     public void sy() throws Exception {
         //synchronized 
+        // Queue<E>
+        List<Integer> list = new ArrayList<>(99);
+        list = IntStream.range(1, 100).boxed().collect(Collectors.toList());
+        System.out.println(list);
+        list.remove(0);
+        list.add(1);
+        System.err.println(list);
+
     }
 
+    @Test
+    public void Pattern() throws Exception {
+        boolean bn = Pattern.matches("(^[0-9]{1,6}$)|(^[0-9]{1,6}[\\.]{1}[0-9]{1,2}$)",
+            "00.11");
+        boolean bn1 = Pattern.matches("(^[0-9]{1,6}$)|(^[0-9]{1,6}[\\.]{1}[0-9]{1,2}$)",
+            "111111.11");
+        System.err.println(bn);
+        System.out.println(bn1);
+    }
+
+    @Test
+    public void clone1() throws Exception {
+        List<Staff> asList = Arrays.asList(new Staff("小明", 18, new BigDecimal(2000)),
+            new Staff("小明1", 33, new BigDecimal(22020)), new Staff("小明2", 44, new BigDecimal(2800)),
+            new Staff("小明3", 23, new BigDecimal(2700)), new Staff("小明4", 21, null),
+            new Staff("小明5", 10, new BigDecimal(1600)), new Staff("小明6", 56, new BigDecimal(21000)),
+            new Staff("小明7", 49, new BigDecimal(12000)));
+        List<Staff> list = new ArrayList<>(asList);
+        //List<Staff> list = asList;
+        //System.err.println(asList.get(0).getName() == list.get(0).getName());
+        //asList.get(0).setName("校长");
+        list.remove(0);
+        System.out.println(list);
+        System.out.println(asList);
+    }
+
+    @Test
+    public void md5() throws Exception {
+        String phone = "18670796595";
+        String str = "phone=" + phone + "&auth_str=ddgj";
+        String auth = DigestUtils.md5Hex(str);
+        System.err.println(auth);
+    }
+
+    @Test
+    public void tojson() throws Exception {
+        String data = "[{\"id\":1683,\"parentIntKey\":0,\"parentStrKey\":\"0\",\"strKey\":\"9\",\"intKey\":9,\"value\":\"初中\",\"aliasEnglishValue\":\"junior high\",\"aliasPinYinValue\":\"chuzhong\",\"desc\":\"\",\"deleted\":\"UNDELETED\",\"order\":1,\"children\":[],\"itemAliasValue1\":null,\"itemAliasValue2\":null,\"attributeValue\":{}},{\"id\":1681,\"parentIntKey\":0,\"parentStrKey\":\"0\",\"strKey\":\"13\",\"intKey\":13,\"value\":\"中技\",\"aliasEnglishValue\":\"Skilled Workers Training\",\"aliasPinYinValue\":\"zhongji\",\"desc\":\"\",\"deleted\":\"UNDELETED\",\"order\":2,\"children\":[],\"itemAliasValue1\":null,\"itemAliasValue2\":null,\"attributeValue\":{}},{\"id\":1682,\"parentIntKey\":0,\"parentStrKey\":\"0\",\"strKey\":\"7\",\"intKey\":7,\"value\":\"高中\",\"aliasEnglishValue\":\" Senior High\",\"aliasPinYinValue\":\"gaozhong\",\"desc\":\"\",\"deleted\":\"UNDELETED\",\"order\":3,\"children\":[],\"itemAliasValue1\":null,\"itemAliasValue2\":null,\"attributeValue\":{}},{\"id\":1680,\"parentIntKey\":0,\"parentStrKey\":\"0\",\"strKey\":\"12\",\"intKey\":12,\"value\":\"中专\",\"aliasEnglishValue\":\"Secondary Specialized\",\"aliasPinYinValue\":\"zhongzhuan\",\"desc\":\"\",\"deleted\":\"UNDELETED\",\"order\":4,\"children\":[],\"itemAliasValue1\":null,\"itemAliasValue2\":null,\"attributeValue\":{}},{\"id\":1674,\"parentIntKey\":0,\"parentStrKey\":\"0\",\"strKey\":\"5\",\"intKey\":5,\"value\":\"大专\",\"aliasEnglishValue\":\"Associate\",\"aliasPinYinValue\":\"dazhuan\",\"desc\":\"\",\"deleted\":\"UNDELETED\",\"order\":5,\"children\":[],\"itemAliasValue1\":null,\"itemAliasValue2\":null,\"attributeValue\":{}},{\"id\":1675,\"parentIntKey\":0,\"parentStrKey\":\"0\",\"strKey\":\"4\",\"intKey\":4,\"value\":\"本科\",\"aliasEnglishValue\":\"Bachelor\",\"aliasPinYinValue\":\"benke\",\"desc\":\"\",\"deleted\":\"UNDELETED\",\"order\":6,\"children\":[],\"itemAliasValue1\":null,\"itemAliasValue2\":null,\"attributeValue\":{}},{\"id\":1676,\"parentIntKey\":0,\"parentStrKey\":\"0\",\"strKey\":\"3\",\"intKey\":3,\"value\":\"硕士\",\"aliasEnglishValue\":\"Master\",\"aliasPinYinValue\":\"shuoshi\",\"desc\":\"\",\"deleted\":\"UNDELETED\",\"order\":7,\"children\":[],\"itemAliasValue1\":null,\"itemAliasValue2\":null,\"attributeValue\":{}},{\"id\":1678,\"parentIntKey\":0,\"parentStrKey\":\"0\",\"strKey\":\"10\",\"intKey\":10,\"value\":\"MBA\",\"aliasEnglishValue\":\"MBA\",\"aliasPinYinValue\":\"MBA\",\"desc\":\"\",\"deleted\":\"UNDELETED\",\"order\":8,\"children\":[],\"itemAliasValue1\":null,\"itemAliasValue2\":null,\"attributeValue\":{}},{\"id\":1679,\"parentIntKey\":0,\"parentStrKey\":\"0\",\"strKey\":\"11\",\"intKey\":11,\"value\":\"EMBA\",\"aliasEnglishValue\":\"EMBA\",\"aliasPinYinValue\":\"EMBA\",\"desc\":\"\",\"deleted\":\"UNDELETED\",\"order\":9,\"children\":[],\"itemAliasValue1\":null,\"itemAliasValue2\":null,\"attributeValue\":{}},{\"id\":1677,\"parentIntKey\":0,\"parentStrKey\":\"0\",\"strKey\":\"1\",\"intKey\":1,\"value\":\"博士\",\"aliasEnglishValue\":\"Doctor\",\"aliasPinYinValue\":\"boshi\",\"desc\":\"\",\"deleted\":\"UNDELETED\",\"order\":10,\"children\":[],\"itemAliasValue1\":null,\"itemAliasValue2\":null,\"attributeValue\":{}},{\"id\":1684,\"parentIntKey\":0,\"parentStrKey\":\"0\",\"strKey\":\"8\",\"intKey\":8,\"value\":\"其他\",\"aliasEnglishValue\":\"Other\",\"aliasPinYinValue\":\"qita\",\"desc\":\"\",\"deleted\":\"UNDELETED\",\"order\":11,\"children\":[],\"itemAliasValue1\":null,\"itemAliasValue2\":null,\"attributeValue\":{}}]";
+        JSONArray parseJson = (JSONArray) JSONArray.parse(data);
+        JSONArray education = new JSONArray();
+        JSONObject obj = null;
+        int i = 0;
+        for (Object j : parseJson) {
+            JSONObject json = (JSONObject) j;
+            obj = new JSONObject();
+            education.add(json.getString("value"));
+        }
+        System.err.println(education);
+
+    }
+
+    @Test
+    public void tojson1() throws Exception {
+        /* 通信|电子   
+        通讯；设备/运营；增值服务；电子技术/半导体；集成电路*/
+        String data = "中介服务；劳务派遣";
+
+        JSONArray education = new JSONArray();
+        JSONObject obj = new JSONObject();
+        obj.put("value", "中介服务");
+        int i = 0;
+        for (String j : data.split("；")) {
+            education.add(j);
+        }
+        obj.put("children", education);
+        System.err.println(obj);
+
+    }
 }
