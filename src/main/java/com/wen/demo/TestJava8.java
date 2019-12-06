@@ -1,5 +1,6 @@
 package com.wen.demo;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -8,18 +9,28 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Random;
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
 
@@ -183,7 +194,10 @@ public class TestJava8 {
         String[] arr = { "1", "2", "3" };
         System.err.println(arr);
         System.err.println(arr.toString());
-
+        BigDecimal balance=new BigDecimal("-39.5");
+        BigDecimal amount=new BigDecimal("-23");
+        boolean compareTo = balance.add(amount).compareTo(BigDecimal.ZERO)<0;
+        System.err.println("比较："+compareTo);
     }
 
     @Test
@@ -469,8 +483,9 @@ public class TestJava8 {
 
     @Test
     public void md5() throws Exception {
-        String phone = "18670796595";
-        String str = "phone=" + phone + "&auth_str=ddgj";
+        String phone = "17369379967";
+        String auth1 = DigestUtils.md5Hex("phone=" + phone);
+        String str = "phone=" + phone + "@auth_str=ddgj";
         String auth = DigestUtils.md5Hex(str);
         System.err.println(auth);
     }
@@ -507,5 +522,76 @@ public class TestJava8 {
         obj.put("children", education);
         System.err.println(obj);
 
+    }
+
+    @Test
+    public void map() {
+        Map<String, Long> map = null;
+        Map test = new HashMap<>();
+        test.put("Long", 100L);
+        System.err.println("old:"+test.put("integer", 100));
+        System.err.println("new:"+test.put("integer", 200));
+        map = test;
+       // ConcurrentHashMap<K, V>
+        System.err.println("1:" + map.get("Long"));
+        System.err.println("2:" + map.get("Long").toString());
+        System.err.println("3:" + map.get("integer"));
+        System.err.println("4:" + map.get("integer").toString());//抛出异常
+    }
+
+    @Test
+    public void int1() {
+        double d = 5.6;
+        int i = (int) d;
+        System.err.println(i);
+    }
+
+    @Test
+    public void replaceStr() {
+        String str = "appid=wx75fba92a06f4f263&body=工匠云学院&mch_id=1516766741&nonce_str=362e80d4df43b03ae6d3f8540cd63626&notify_url=http://admin.dhgjcloud.com/customize/control/weixin_notify_url&out_trade_no=CZ2019061411502034&spbill_create_ip=127.0.0.1&total_fee=1&trade_type=APP";
+        String replace = str.replace("1516766741", "1536951661");
+        System.err.println(replace);
+    }
+    
+    @Test
+    public void hashtable() {
+       /* Hashtable<String, String> zz=new Hashtable<>();
+        zz.put(null, "Hashtable");
+        System.err.println(zz.get(null));*/
+        HashMap<String, String> map=new HashMap<>();
+        map.put(null, "hashmap");
+        System.err.println(map.get(null));
+        ConcurrentHashMap<String, String> concurrentHashMap = new ConcurrentHashMap<String, String>();
+    }
+    
+    @Test
+    public void reflect() throws InstantiationException, IllegalAccessException {
+        Class<?> StaffClass=Staff.class;
+        System.err.println(StaffClass.newInstance());
+        System.err.println(StaffClass.newInstance());
+        
+        String[] studentIds = "123".split(",");
+        System.err.println(studentIds[0]);
+        
+        String phone="17369379967";
+        String pwd = phone.substring(phone.length() - 6);
+        System.err.println(pwd);
+        //Optional<Integer> ofNullable = Optional.ofNullable(1).get();
+    }
+    
+    @Test
+    public void http() throws InstantiationException, IllegalAccessException, ClientProtocolException, IOException {
+        HttpClient client = HttpClients.createDefault();// 创建默认http连接
+        HttpGet post = new HttpGet("http://111.230.180.38:3000/mock/11/customize/control/interfaceRoute?method=gxyRoute&interface=rechargeList");// 创建一个post请求
+
+        HttpResponse response = client.execute(post);// 用http连接去执行get请求并且获得http响应
+        HttpEntity entity = response.getEntity();// 从response中取到响实体
+        String html = EntityUtils.toString(entity);// 把响应实体转成文本
+        System.out.println(html);
+    }
+    
+    @Test
+    public void zz() {
+        
     }
 }

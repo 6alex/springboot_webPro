@@ -93,10 +93,10 @@ public class Staff {
     /* (non-Javadoc)
      * @see java.lang.Object#toString()
      */
-    @Override
+    /*@Override
     public String toString() {
         return "Staff [name=" + name + ", age=" + age + ", salary=" + salary + ", time=" + time + "]";
-    }
+    }*/
     /**
      * 
      */
